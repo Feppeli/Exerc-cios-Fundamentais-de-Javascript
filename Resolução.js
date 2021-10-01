@@ -122,3 +122,108 @@ console.log(estaEntre(15,5,14))         //false
 console.log(estaEntre(15,5,14,))        //false
 console.log(estaEntre(15,5,14,true))    //true
 console.log(estaEntre("douglas"))       //reclamando por não ter valores válidos
+
+
+
+//8---------------------------------------------------------------------------------------------------------------------
+// criando uma função, passando dois parâmetros
+function multiplicar(numeroA, numeroB) {
+
+    //criando um sistema de condicional
+    if (numeroA === 0 || numeroB === 0) return 0
+
+    //Declarando constante que descriminam o maior e o menor numero
+    const maiorNumero = Math.max(numeroA, numeroB)
+    const menorNumero = Math.min(numeroA, numeroB)
+
+    // Criando uma função para ser chamada dentro da função com o calculo sem operador
+    function multiplicarRecursivamente(numero, multiplicador) {
+    return (
+    multiplicador === 1 ?
+    numero :
+    numero + multiplicarRecursivamente(numero, multiplicador-1)
+    )
+    }
+    // nessa versão, garantimos que o multiplicador será será o menor número, portanto haverá o mínimo de chamadas recursivas
+    return multiplicarRecursivamente(maiorNumero, menorNumero )
+    }
+    
+console.log(multiplicar(3,5))
+console.log(multiplicar(0,4))
+
+
+
+//9---------------------------------------------------------------------------------------------------------------
+//criando uma função passando doisprâmentros
+function repetir(item, quantidade) {
+    var resultado = []  // variável contendo uma array
+
+    // criando um loop com for
+    for (let i = 0; i < quantidade; i++)
+        resultado.push(item)
+
+    return resultado
+}
+
+//simulando
+console.log(repetir("D", 14))
+
+
+
+//10-------------------------------------------------------------------------------------------------------------------
+//criando uma função com 1 parâmentro
+function repetidor(quantidade) {
+
+    //criando uma variável com valor String vazio
+    let resultado = ""
+
+    //criando um sistema de loop
+    for(let i = 0; i < quantidade; i++) // enquanto o valor não foi igual aquantidade continuaráimprimindo
+        resultado += '+' // passando um valor para a variável para que seja repetido
+
+    return resultado // retornando o valor repetido
+        
+}
+
+//Simulando
+console.log(repetidor(20))
+console.log(repetidor(12))
+console.log(repetidor(8))
+
+
+
+//11---------------------------------------------------------------------------------------------------------------------
+// criamos uma variável contendo uma Array
+var numeros = [1, 2, 3, 4, 5, 7, 8, 9]
+
+//criando uma função 
+function firstLast() {
+
+    // craindo duas variáveis que vão pegar o primeiro e o ultimo item da array criada
+    var first = numeros[0]
+    var last = numeros[numeros.length-1]
+    
+    //retornando essas duas variáveis
+    return [first, last]
+}
+
+//simulando
+console.log(firstLast())
+
+//OBS: o valor só será alterado caso a array seja alterada, pode ser colocado String, boolean
+
+//12-------------------------------------------------------------------------------------------------
+
+// criando uma função com dois parâmetros
+function copia(objeto, nomeDaPropriedade) {
+
+    //criando uma constante que recebe os dados do objeto
+    const copia = Object.assign({},objeto)
+    // deletando o dado selecionado no segundo parâmetro
+    delete copia[nomeDaPropriedade]
+
+    return copia //retornado a copia já com a propriedade removida
+}
+
+//13------------------------------------------------------------------------------------------------------
+
