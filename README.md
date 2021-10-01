@@ -1,1 +1,1 @@
-# Exerc-cios-Fundamentais-de-Javascript
+# Exercícios de fundamentos do Javascript
