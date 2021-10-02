@@ -259,21 +259,70 @@ console.log(objetoParaArray(carro))
 
 
 //15------------------------------------------------------------------------------------------------------------
+//criando uma array
 const lista = [1,3,4,6,8,12,34,56,76]
 
+//função que recebe um parâmentro
 function receberSomenteNumeroPares(numeros) {
+
+    // variável que contem uma array
     let resultado = []
 
+    //criando sistema de loop
     for(let i = 0; i < numeros.length; i += 2) {
         const numeroPar = numeros[i] % 2 === 0
 
+        //condicional
         if (numeroPar)
             resultado.push(numeros[i])
     }
 
-    return resultado
+    return resultado // retornando a váriável com os intens pares dentro da array
 }
 
 
 
 //16---------------------------------------------------------------------------------------------------------
+
+// função que recebe o parâmetro ano
+function anoBisexto(ano) {
+    let resultado = true
+
+    //constantes que os itens divisíveis
+    const divisivelPorQuatro = ano % 4 == 0
+    const divisivelPorCem = ano %  100 == 0
+    const divisivelPorQuatrocentos = ano % 400 == 0
+
+    // craindo condicional para retornar se o parâmetro é um ano bisexto ou não
+    if(divisivelPorQuatro) {
+        return `${resultado}`
+    }else if(divisivelPorCem) {
+        return `${resultado}`
+    }else if(divisivelPorQuatrocentos) {
+        return `${resultado}`
+    }else {
+        return `${!resultado}`
+    }
+}
+
+//simulando
+console.log(anoBisexto(2002))
+console.log(anoBisexto(1988))
+
+//17------------------------------------------------------------------------------------------------------------
+
+// criando uma array
+const arrayParaSoma = [1, 2, 3]
+
+
+// função passando um parâmetro
+function somaDeArrays(array) {
+    //retornando a soma dos itens da array
+    return array.reduce((total, currentElement) => total + currentElement)
+}
+
+//simulando
+console.log(somaDeArrays(arrayParaSoma))
+
+//18---------------------------------------------------------------------------------------------------------------
+
