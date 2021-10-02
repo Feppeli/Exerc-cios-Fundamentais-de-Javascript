@@ -226,5 +226,54 @@ function copia(objeto, nomeDaPropriedade) {
 }
 
 //13------------------------------------------------------------------------------------------------------
+// criando a função
+function filtrarArray(array){
+    const resultado = []        //declarando uma constante
+
+    // utilizando um sistema de loop
+    for (let item of array) {
+        if (typeof item === "number")   // indicando para só usar os tipo number
+            resultado.push(item) // puxando as informações da array
+    
+    return resultado // retornando o resultado
+    }
+}
 
 
+
+//14--------------------------------------------------------------------------------------------------------
+// criando um objeto 
+var carro = {   // Declarando as propriedades do objeto
+    fabricante: "Mitsubish",
+    modelo: "Pajero TR4",
+    ano: 2016
+}
+
+//criando a função 
+function objetoParaArray(objeto){
+    return Object.entries(objeto)// retornando o objeto em arrays
+}
+//simulando
+console.log(objetoParaArray(carro))
+
+
+
+//15------------------------------------------------------------------------------------------------------------
+const lista = [1,3,4,6,8,12,34,56,76]
+
+function receberSomenteNumeroPares(numeros) {
+    let resultado = []
+
+    for(let i = 0; i < numeros.length; i += 2) {
+        const numeroPar = numeros[i] % 2 === 0
+
+        if (numeroPar)
+            resultado.push(numeros[i])
+    }
+
+    return resultado
+}
+
+
+
+//16---------------------------------------------------------------------------------------------------------
