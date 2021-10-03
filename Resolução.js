@@ -325,4 +325,131 @@ function somaDeArrays(array) {
 console.log(somaDeArrays(arrayParaSoma))
 
 //18---------------------------------------------------------------------------------------------------------------
+//criando uma array com 2 produtos
+const compras = [{nome: 'Notebook gamer', descrição: 'Eletrônico', preco: 2399}, {
+    nome: 'Playstation 5', descrição: 'Eletrônico', preco: 4890}]
 
+
+// função que rebe um parâmetro
+function despesasTotais(itens) {
+
+    return itens // retornando o parâmetro que recebeu
+    .map(item => item.preco) // mapeando o lugar onde se encontra o preço
+    .reduce((acumulador, valorAtual) => acumulador + valorAtual)  // reduzindo as duas array para uma só retornando a soma
+}
+    
+//simulando
+console.log(despesasTotais(compras))
+
+
+
+//19--------------------------------------------------------------------------------------------------------------
+// criando uma array
+const valores = [1,4,5,6,7,10,13,24,53]
+
+//função que recebe um parâmetro
+function calcularMedia(media) {
+
+    //criando uma variável para encontrar o números de elementos no array
+    var dividir = media.length
+    // craindo uma variável para juntar os elementos da array em um só (somar)
+    var somar = media.reduce((somar, currentElement) => somar + currentElement)
+
+    // variável para fazero calculo de média
+    var resultado = somar / dividir
+
+    return resultado.toFixed(2)// retornando o resultado com a casa décimal fixada em 2
+    
+}
+//simulando
+console.log(calcularMedia(valores))
+
+
+
+//20----------------------------------------------------------------------------------------------------------------------
+
+// criando uma função, como a questão pedia pra receber a base e a altura de um triângulo não precisa  criar objeto
+function areaDoTriangulo(base, altura) {
+
+    // variável com o calculo de área
+    var area = (base * altura) / 2
+
+    return area.toFixed(2) // retorno da função com a casa décimal fixada em 2
+}
+
+
+//simulando
+console.log(areaDoTriangulo(12,8))
+console.log(areaDoTriangulo(177,1))
+console.log(areaDoTriangulo(20,2))
+
+
+
+//21-------------------------------------------------------------------------------------------------------------------------
+
+// criando uma array
+const menorDaArray = [1, 3, 5, 6, 8]
+
+// função que recebe um parâmetro
+function encontrarMenorElementoArray(array) {
+    // variável que encontra o menor item da array 
+    var menorElemento = Math.min.apply(Math, array);
+
+    return menorElemento // retorno da função
+}
+
+// simulando
+console.log(encontrarMenorElementoArray(menorDaArray))
+
+
+
+//22---------------------------------------------------------------------------------------------------------------------------
+
+//a variável que criava um número 
+var numeroSecreto = parseInt(Math.random() * 11)
+
+//função que recebe um parâmetro 
+function mentalista(chute) {
+    
+    //sistema de condicionais
+    if(chute == numeroSecreto) {
+        return `Você acertou!! o número secreto é: ${numeroSecreto}`
+
+    }else if(chute > 10 || chute < 0) {
+        return`você deve digitar um valor válido de 0 a 10`
+
+    }else {
+        return `você errou o número secreto era: ${numeroSecreto}`
+    }
+
+}
+
+// simulando
+console.log(mentalista(0))
+console.log(mentalista(1))
+console.log(mentalista(2))
+console.log(mentalista(3))
+console.log(mentalista(4))
+console.log(mentalista(5))
+console.log(mentalista(6))
+console.log(mentalista(7))
+console.log(mentalista(8))
+console.log(mentalista(9))
+console.log(mentalista(10))
+console.log(mentalista(101))
+
+//23--------------------------------------------------------------------------------------------------------------------------------------
+//criando uma variável que contem um paragrafo tirado da web
+var frase = "programas Java pode criar matrizes de seqüência direta ou através da leitura de texto a partir de uma fonte externa, como um arquivo ou banco de dados. A sintaxe a seguir exemplo demonstra a criação de uma matriz com algumas variáveis ​​de cadeia nele"
+
+//função que recebe um parâmetro
+function contarPalavras(palavras) {
+
+    // criando uma variável quee vai dividir a string em partes dentro de uma array sendo cada elemento separado pelo espaço entre as palavras
+    const contagem = palavras.split(" ")
+
+    return contagem.length // retornando a contagem
+}
+
+// simulando
+console.log(contarPalavras(frase))
