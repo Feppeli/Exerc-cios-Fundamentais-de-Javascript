@@ -452,4 +452,145 @@ function contarPalavras(palavras) {
 }
 
 // simulando
-console.log(contarPalavras(frase))
+console.log(contarPalavras(frase)) // resultado = 44
+
+
+
+//24-----------------------------------------------------------------------------------------------------------------------------------------
+var texto = "lepra é uma infecção crônica causada pela bactéria Mycobacterium leprae ou Mycobacterium lepromatosis. Ela resulta em danos principalmente nos nervos periféricos (nervos localizados no exterior do cérebro e da medula espinhal), na pele, nos testículos, nos olhos e nas membranas mucosas do nariz e da garganta."
+
+
+function contarLetra(letra, frase) {
+    var quantidade = 0
+
+    for (var i = 0; i < frase.length; i++) {
+    if(frase[i] == letra) {
+        quantidade++
+    }
+    }
+    return quantidade
+}
+// simulando
+console.log(contarLetra('a', texto))    //resultado = 32
+
+
+
+
+//25---------------------------------------------------------------------------------------------------------------------------------------
+//funçãoq ue recebe dois parâmetros
+function buscarPalavrasSemelhantes(inicio, palavras) {
+    //criando uma constante que recebe uma array vazia
+    const resultado = []
+
+    //criando um sistema de loop com condicionais
+    for (let palavra of palavras)
+    if(palavra.includes(inicio))
+        resultado.push(palavra)
+    
+    return resultado // retornando a constante com as palavras semelhantes
+}
+
+//simulando
+console.log(buscarPalavrasSemelhantes("pro", ["programação", "mobile", "profissional"]))
+
+
+
+//26-----------------------------------------------------------------------------------------------------------------------------------------
+
+// função que recebe um parâmetro
+function removerVogais(frase) {
+
+    //aqui chegamos na fase que se vocês entenderem o que eu coloquei aqui me mandem no ig= @codebytatu kkk
+    return frase.replace(/[aeiou]/ig, '')
+}
+    
+//simulando
+console.log(removerVogais("Chocolate"))
+
+
+
+//27--------------------------------------------------------------------------------------------------------------------------------------------
+//objeto que vai ser utilizado na função
+const obj1 = {
+    a:1,
+    b:2,
+    c:3,
+    d:4
+}
+
+//função que recebe um parâmetro
+function inverter(objeto) {
+
+    // criando uma constante que separa os elementos do objeto em um array
+    const paresDeChaveValorInvertidos = Object.entries(objeto)
+    // mapeando as posições do array e passando aprâmetros para inverter
+    .map( parChaveValor => parChaveValor.reverse() )
+    //retornando o objeto com os elementos invertidos
+    return Object.fromEntries(paresDeChaveValorInvertidos)
+}
+// simulando
+console.log(inverter(obj1)) // vai devolver 1:a 2:b 3:c 4:d
+
+
+
+//28-------------------------------------------------------------------------------------------------------------------------------------------
+//constante que contem uma array
+const arrayPraFiltrar = [1,2,3,4,10,20,30,40,110,120,130,140,1000,1200,1340]
+
+//função que recebe dois parâmetro
+function filtrarPorQuantidadeDeDigitos(numeros, quantidadeDesejada) {
+    //retornando um numero filtrando as funções a abaixo
+    return numeros.filter(numero => {
+    // constante que transforma os elementos em string e contam quantos digitos contem
+    const quantidadeDeDigitos = String(numero).length
+    //retornando os número que contem a quantidade pré escolhida
+    return quantidadeDeDigitos === quantidadeDesejada
+    })
+}
+//simulando
+console.log(filtrarPorQuantidadeDeDigitos(arrayPraFiltrar,1))
+console.log(filtrarPorQuantidadeDeDigitos(arrayPraFiltrar,2))
+console.log(filtrarPorQuantidadeDeDigitos(arrayPraFiltrar,3))
+console.log(filtrarPorQuantidadeDeDigitos(arrayPraFiltrar,4))
+
+
+
+//29------------------------------------------------------------------------------------------------------------------------------------------
+//array com a lista de números
+const listaDeNumero = [1,4,5,67,8,]
+
+//função que recebe um parâmetro
+function segundoMaior(numeros) {
+
+    //criando uma constante que vai receber o maior número do parâmetro
+    const maiorNumero = Math.max(...numeros)
+    //redirecionando o selecionado da array
+    numeros = numeros.filter(numero => numero != maiorNumero)
+    const segundoMaior = Math.max(...numeros)
+    return segundoMaior // retornando o segundo maior valor da lista
+}
+    
+//simulando
+console.log(segundoMaior(listaDeNumero))
+
+
+
+//30----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+const soma = array => array.reduce((acumulador, atual) => acumulador + atual, 0)
+const media = array => soma(array) / array.length
+
+function recerberMelhorEstudante(estudantes) {
+    const estudantesComMedias = Object.entries(estudantes).map( estudante => {
+        const chave = 0,
+        valor = 1
+
+        return { nome: estudante[chave], media: media(estudante[valor]) }
+    })
+    const estudantesOrdenados = estudantesComMedias.sort( (estudanteA, estudanteB) => estudanteB.media - estudanteA.media )
+    const melhorEstudante = estudantesOrdenados[0]
+
+    return melhorEstudante
+}
